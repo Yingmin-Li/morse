@@ -36,3 +36,16 @@ def decode(message):
     symbols = message.split(" ")
     letters = [ALPHABET[s] for s in symbols]
     return ''.join(letters)
+
+def decode(message):
+    if message == "":
+        return ""
+
+    words = message.split(" / ")
+    decoded_words = [decode_word(word) for word in words]
+    return ' '.join(decoded_words)
+
+def decode_word(word):
+    symbols = word.split(" ")
+    letters = [ALPHABET[s] for s in symbols]
+    return ''.join(letters)
